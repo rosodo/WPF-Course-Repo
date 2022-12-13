@@ -1,14 +1,10 @@
 ﻿using System.Collections.Generic;
 using System.Threading.Tasks;
-using WiredBrainCoffee.CustomersApp.Model;
+using WiredBrainCofeeCustomersApp;
+using WiredBrainCofeeCustomersApp.Models;
 
 namespace WiredBrainCoffee.CustomersApp.Data
 {
-  public interface ICustomerDataProvider
-  {
-    Task<IEnumerable<Customer>?> GetAllAsync();
-  }
-
   public class CustomerDataProvider : ICustomerDataProvider
   {
     public async Task<IEnumerable<Customer>?> GetAllAsync()

@@ -1,4 +1,4 @@
-﻿namespace WiredBrainCoffee.CustomersApp.Model
+﻿namespace WiredBrainCofeeCustomersApp.Models
 {
   public class Customer
   {
