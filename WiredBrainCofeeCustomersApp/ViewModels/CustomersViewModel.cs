@@ -9,9 +9,11 @@ using WiredBrainCofeeCustomersApp.Models;
 
 namespace WiredBrainCofeeCustomersApp.ViewModels
 {
-    public class CustomersViewModel
+
+    public class CustomersViewModel : ViewModelBase
     {
         private readonly ICustomerDataProvider _customerDataProvider;
+        private Customer? _selectedCustomer;
 
         public CustomersViewModel(ICustomerDataProvider customerDataProvider)
         {
@@ -19,6 +21,16 @@ namespace WiredBrainCofeeCustomersApp.ViewModels
         }
 
         public ObservableCollection<Customer> Customers { get; set; } = new();
+
+        public Customer? SelectedCustomer { 
+            get => _selectedCustomer;
+            set
+            {
+                _selectedCustomer = value;
+                RaisePropertyChanged();
+            }
+            
+        }
 
         public async Task LoadAsync()
         {
@@ -35,7 +47,16 @@ namespace WiredBrainCofeeCustomersApp.ViewModels
                     Customers.Add(customer);
                 }
             }
-            
+
         }
+
+        internal void Add()
+        {
+            var customer = new Customer { FirstName = "New" };
+            Customers.Add(customer);
+            SelectedCustomer = customer;
+        }
+        
+       
     }
 }

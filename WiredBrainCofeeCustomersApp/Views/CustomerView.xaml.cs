@@ -49,5 +49,10 @@ namespace WiredBrainCofeeCustomersApp.Views
 
             Grid.SetColumn(customerListGrid, newColumn);
         }
+
+        private void ButtonAdd_Click(object sender, RoutedEventArgs e)
+        {
+            _viewModel.Add();
+        }
     }
 }
