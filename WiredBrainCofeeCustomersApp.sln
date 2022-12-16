@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.4.33110.190
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WiredBrainCofeeCustomersApp", "WiredBrainCofeeCustomersApp\WiredBrainCofeeCustomersApp.csproj", "{A5A84BA3-2CDB-4BBA-9D3F-30B088AC5005}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WiredBrainCofeeCustomersApp", "WiredBrainCofeeCustomersApp\WiredBrainCofeeCustomersApp.csproj", "{A5A84BA3-2CDB-4BBA-9D3F-30B088AC5005}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
