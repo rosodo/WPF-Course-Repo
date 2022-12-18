@@ -28,16 +28,6 @@ namespace WiredBrainCofeeCustomersApp.ViewModels
             DeleteCommand = new DelegateCommand(Delete, CanDelete);
         }
 
-        private bool CanDelete(object? arg)
-        {
-            throw new NotImplementedException();
-        }
-
-        private void Delete(object? obj)
-        {
-            throw new NotImplementedException();
-        }
-
         public DelegateCommand AddCommand { get; }
         public DelegateCommand MoveNavigationCommand { get; }
         public DelegateCommand DeleteCommand { get; }
@@ -50,6 +40,7 @@ namespace WiredBrainCofeeCustomersApp.ViewModels
             {
                 _selectedCustomer = value;
                 RaisePropertyChanged();
+                DeleteCommand.RaiseCanExecuteChanged();
             }
             
         }
@@ -97,6 +88,16 @@ namespace WiredBrainCofeeCustomersApp.ViewModels
                 : NavigationSide.Left;
         }
 
+        private bool CanDelete(object? parameter) => SelectedCustomer is not null; 
         
+
+        private void Delete(object? parameter)
+        {
+            if(SelectedCustomer is not null)
+            {
+                Customers.Remove(SelectedCustomer);
+                SelectedCustomer = null;
+            }
+        }
     }
 }
