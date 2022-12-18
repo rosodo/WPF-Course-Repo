@@ -50,7 +50,9 @@
         </Grid>
 
         <!-- Customer detail -->
-        <StackPanel Margin="10" Grid.Column="1">
+        <StackPanel Margin="10" Grid.Column="1"
+                    Visibility="{Binding IsCustomerSelected, 
+            Converter={StaticResource BooleanToVisibilityConv}}">
             <Label>Firstname:</Label>
             <TextBox Text="{Binding SelectedCustomer.FirstName,
                 Mode=TwoWay,
