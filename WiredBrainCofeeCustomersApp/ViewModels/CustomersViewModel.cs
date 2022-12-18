@@ -25,10 +25,22 @@ namespace WiredBrainCofeeCustomersApp.ViewModels
             _customerDataProvider = customerDataProvider;
             AddCommand = new DelegateCommand(Add);
             MoveNavigationCommand = new DelegateCommand(MoveNavigation);
+            DeleteCommand = new DelegateCommand(Delete, CanDelete);
+        }
+
+        private bool CanDelete(object? arg)
+        {
+            throw new NotImplementedException();
+        }
+
+        private void Delete(object? obj)
+        {
+            throw new NotImplementedException();
         }
 
         public DelegateCommand AddCommand { get; }
         public DelegateCommand MoveNavigationCommand { get; }
+        public DelegateCommand DeleteCommand { get; }
 
         public ObservableCollection<CustomerItemViewModel> Customers { get; } = new();
 
