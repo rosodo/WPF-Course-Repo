@@ -42,6 +42,7 @@ namespace WiredBrainCofeeCustomersApp.ViewModels
                 RaisePropertyChanged();
                 RaisePropertyChanged(nameof(IsCustomerSelected));
                 DeleteCommand.RaiseCanExecuteChanged();
+               
             }
             
         }
@@ -58,7 +59,7 @@ namespace WiredBrainCofeeCustomersApp.ViewModels
             }
         }
 
-        public async Task LoadAsync()
+        public async override Task LoadAsync()
         {
             if (Customers.Any())
             {
